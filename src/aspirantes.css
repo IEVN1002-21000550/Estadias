@@ -260,7 +260,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #43ff19, #3498db, #130163); /* Gradiente inicial con tres colores */
+    background: linear-gradient(135deg, #43ff19, #63b7ee, #130163); /* Gradiente inicial con tres colores */
     background-size: 300% 300%; 
     color: #f8f9fa;
     text-shadow: 1px 1px 10px rgb(0, 0, 0); 
