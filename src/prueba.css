@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+nav {
+  z-index: 50;
+}
+.header {
+  border-bottom: 2px solid #e9ecef;
+}
+
+.nav-link {
+  color: #000;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+#main {
+  position: relative;
+  z-index: 20;
+  background: #fff;
+  transition: transform 0.6s ease;
+  padding: 1em;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+.fake-section {
+  background: #eee;
+  height: 300px;
+}
+
+.tiles-a {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.tiles-a ul {
+  margin: 0;
+  padding: 0;
+}
+
+.tiles-a li {
+  list-style: none;
+}
+
+.tiles-a li {
+  float: left;
+  width: 97%;
+}
+
+@media (min-width: 640px) {
+  #main {
+    padding: 1em;
+  }
+}
+
+.tiles-a a {
+  margin: 1em;
+  display: block;
+  background: #222;
+  padding-top: 73%;
+  height: 0;
+}
+
+
+#aside {
+  position: fixed;
+  top: 0;
+  right: -60%; /* Oculto fuera de la vista */
+  width: 60%;
+  height: 100%;
+  background: #eee;
+  overflow-y: hidden; /* Scroll desactivado */
+  z-index: 1;
+  transition: right 0.3s ease; /* Transición suave */
+}
+
+/* Estado visible */
+html.show-detail #aside {
+  right: 0; /* Mueve el aside a la vista */
+  overflow-y: scroll; /* Scroll activado */
+}
+
+
+#aside img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+#aside .wrapper {
+  padding: 1em;
+}
+
+#aside .close {
+  width: 25px;
+  display: block;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.show-detail {
+  overflow: hidden;
+}
+
+.show-detail #main {
+  transform: translateX(-60%);
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 5px;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+
+.gallery__link {
+  overflow: hidden;
+  height: 400px;
+  position: relative;
+}
+.gallery__link:hover .gallery__caption {
+  opacity: 1;
+}
+.gallery__link:hover .gallery__image {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.gallery__thumb {
+  position: relative;
+  height: 100%;
+}
+
+.gallery__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s, filter 0.3s;
+}
+.gallery__image:hover {
+  transform: scale(1.08);
+}
+.gallery__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 15px;
+  width: 80%;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.gallery__link:hover .gallery__caption {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}  
+.navbar {
+  padding: 10px;
+  background-color: #F7F7F7;
+}
+
+/* .navbar img {
+  max-width: 100%;
+} */
+
+.navbar-nav .nav-link {
+  font-size: 16px;
+  color: #333;
+  padding: 10px 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.dropdown-menu {
+  width: 220px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.iconos[data-bs-popper] {
+  top: 100%;
+  left: -185%;
+  margin-top: var(--bs-dropdown-spacer);
+
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.dropdown-item p {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Para hacer responsivo */
+@media (max-width: 768px) {
+  .custom-large-box {
+      height: 200px;
+  }
+  
+
+  .object-fit-cover {
+      height: auto;
+  }
+  .carousel img {
+      height: 200px;
+  }
+
+  .gallery {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+
+@media (min-width: 1024px) {
+  .gallery {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1440px) {
+  .gallery {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+

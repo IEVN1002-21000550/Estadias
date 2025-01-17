@@ -1,0 +1,126 @@
+/* General */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300&family=Titillium+Web:wght@300&display=swap');
+
+
+.navbar {
+    z-index: 2;
+}
+
+#leonCosmico {
+    position: relative;
+    width: 50vw; 
+    height: 100vh; 
+    border-top-left-radius: 100%; 
+    border-bottom-left-radius: 100%;
+    background: url(./img/LeonCosmico.jpeg) center/cover no-repeat; 
+    margin-left: auto; 
+}
+
+/* Header */
+.header {
+    border-bottom: 2px solid #e9ecef;
+}
+
+.nav-link {
+    color: #000;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: #0d6efd;
+}
+
+.dropdown-menu {
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconos[data-bs-popper] {
+    top: 100%;
+    left: -185%;
+    margin-top: var(--bs-dropdown-spacer);
+
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.dropdown-item p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Botón */
+.btn-outline-success {
+    border: 2px solid #007b5e;
+    color: #007b5e;
+}
+
+.btn-outline-success:hover {
+    background-color: #007b5e;
+    color: white;
+}
+
+.chamba img {
+    padding-top: 10%;
+}
+.contenido {
+    padding: 0%;
+    padding-right: 0%; 
+    padding-left: 0%;
+}
+@media (max-width: 767px) {
+    .iconos[data-bs-popper] {
+        left: 0%;
+    }
+    #leonCosmico {
+        display: none;
+    }
+}
+
+/* Ajustes responsivos */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .logo-image {
+        max-width: 30%;
+    }
+    #leonCosmico {
+        display: none;
+    }
+    .iconos[data-bs-popper] {
+        left: 0%;
+    }
+}
+
+
+
+@media (min-width: 1024px)  {
+    #leonCosmico {
+        width: 50vw;
+        height: 90vh;
+    }
+}
+
+@media (min-width: 1440px) {
+    #leonCosmico {
+        width: 50vw; 
+        height: 100vh;
+    }
+}
